@@ -1,0 +1,52 @@
+#  ▓▓▓▓▓▓▓▓▓▓
+# ░▓ Author ▓ Abdullah <https://abdullah.today/>
+# ░▓▓▓▓▓▓▓▓▓▓
+# ░░░░░░░░░░  
+# Description:Network design and emulation software for Cisco's Networking Academy instructors and students.
+# URL:http://www.netacad.com/about-networking-academy/packet-tracer
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on: jre icu fpc openssl
+
+name=packettracer
+version=7.2.1
+release=1
+source=(file:///packettracer.tar.gz packettracer packettracer.sh linguist)
+
+build() {
+	cd $SRC
+   mkdir -p "$PKG/usr/share/packettracer/"{art,backgrounds,bin,extensions,help,languages,saves,Sounds,templates}
+  cp -r ./art/* "$PKG/usr/share/packettracer/art"
+  cp -r ./backgrounds/* "$PKG/usr/share/packettracer/backgrounds"
+  cp -r ./bin/* "$PKG//usr/share/packettracer/bin"
+  cp -r ./extensions/* "$PKG/usr/share/packettracer/extensions"
+  cp -r ./languages/* "$PKG/usr/share/packettracer/languages"
+  cp -r ./saves/* "$PKG/usr/share/packettracer/saves"
+  cp -r ./Sounds/* "$PKG/usr/share/packettracer/Sounds"
+  cp -r ./templates/* "$PKG/usr/share/packettracer/templates"
+
+  install -D -m644 ./bin/Cisco-pka.xml "$PKG/usr/share/mime/packages/Cisco-pka.xml"
+  install -D -m644 ./bin/Cisco-pkt.xml "$PKG/usr/share/mime/packages/Cisco-pkt.xml"
+  install -D -m644 ./bin/Cisco-pkz.xml "$PKG/usr/share/mime/packages/Cisco-pkz.xml"
+
+  rm "$PKG/usr/share/packettracer/bin/Cisco-pka.xml"
+  rm "$PKG/usr/share/packettracer/bin/Cisco-pkt.xml"
+  rm "$PKG/usr/share/packettracer/bin/Cisco-pkz.xml"
+
+  install -D -m644 ./art/pka.png "$PKG/usr/share/icons/hicolor/48x48/mimetypes/application-x-pka.png"
+  install -D -m644 ./art/pkt.png "$PKG/usr/share/icons/hicolor/48x48/mimetypes/application-x-pkt.png"
+  install -D -m644 ./art/pkz.png "$PKG/usr/share/icons/hicolor/48x48/mimetypes/application-x-pkz.png"
+
+  install -D -m755 "$SRC/packettracer" "$PKG/usr/share/packettracer/packettracer"
+
+  mkdir -p "$PKG/usr/bin/"
+  ln -s /usr/share/packettracer/packettracer "$PKG/usr/bin/packettracer"
+
+  install -D -m755 "$SRC/linguist" "$PKG/usr/share/packettracer/linguist"
+
+  install -D -m755 "$SRC/packettracer.sh" "$PKG/etc/profile.d/packettracer.sh"
+
+  install -D -m644 ./bin/Cisco-PacketTracer.desktop "$PKG/usr/share/applications/Cisco-PacketTracer.desktop"
+  sed 's/\/opt\/pt/\/usr\/share\/packettracer/' -i "$PKG/usr/share/applications/Cisco-PacketTracer.desktop"
+  rm "$PKG/usr/share/packettracer/bin/Cisco-PacketTracer.desktop"
+
+}

@@ -1,0 +1,17 @@
+# Description: Library for easy processing of keyboard entry programs
+# URL: https://leonerd.org.uk/code/libtermkey/
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on: unibilium
+
+name=libtermkey
+version=0.20
+release=1
+source=(http://www.leonerd.org.uk/code/$name/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+   make PREFIX=/usr
+   make DESTDIR=$PKG install
+   rm -rf  $PKG/usr/share/man
+}

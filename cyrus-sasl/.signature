@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/ak.pub
+RWTF6Re4oVuYUVTzPE/auOvMEjXuN46V+P18lQfV8osLLvOiTdYI7Yf6EIxWO02EyMpnvW9N1TeJmWmCDOeX34NUH3rJG0pCxwI=
+SHA256 (Pkgfile) = 4f03f7b6d26c425ee1a86ad90dbccfa69c15eb565d79eeb4e124e5b4394af9c8
+SHA256 (.footprint) = e4e77c95f7485a0b84ae04ce6db392db6aa362e706da3a52ca28f95b97ca6abd
+SHA256 (saslauthd) = 2a96dca868261d5275087ed8e1eef59946f47c6d35797368710c3037f46e61bd

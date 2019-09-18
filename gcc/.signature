@@ -1,0 +1,7 @@
+untrusted comment: verify with /etc/ports/ak.pub
+RWTF6Re4oVuYUdCaEjGQvk8EnKOdsqMAwU0E4e9GUSrqElH+98QMnXhKxd9CprJFxw4sQKE87Bfcsu3GFpgq1YA+jqKYJjtMUAw=
+SHA256 (Pkgfile) = 1e61df8a13300afc321f2dbd374b3849d1008f99720261b2038c2630cc446a0d
+SHA256 (.footprint) = 8fafaf019238025741c1f4576d89947d933cf80fe0bdac31d85576ce1161c072
+SHA256 (gcc-8.2.0.tar.xz) = 196c3c04ba2613f893283977e6011b2345d1cd1af9abeac58e916b1aab3e0080
+SHA256 (gcc-nocheck-fixincludes.patch) = 850a71d2c64b9f2bec31821bd972bf89c2d57764faf64948100eaf474fd63bbb
+SHA256 (gcc-4.7.3-multilib-dirs.patch) = 149b151999d0afad909ca0d1eaf1f9a81c9cd6499e56989ec4fc574d108eeef6

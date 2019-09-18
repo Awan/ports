@@ -1,0 +1,6 @@
+drwxr-xr-x	root/root	etc/
+drwxr-xr-x	root/root	etc/urlview/
+-rwxr-xr-x	root/root	etc/urlview/url_handler.sh
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+lrwxrwxrwx	root/root	usr/bin/url_handler.sh -> /etc/urlview/url_handler.sh

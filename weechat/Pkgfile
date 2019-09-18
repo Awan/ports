@@ -1,0 +1,23 @@
+# Description: weechat is fast, light and extensible irc client
+# URL: https://www.weechat.org/
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on: libgcrypt gnutls cmake
+
+name=weechat
+version=2.4
+release=1
+source=(https://www.weechat.org/files/src/$name-$version.tar.xz)
+
+build() {
+	cd $name-$version
+
+    mkdir build
+    cd build
+
+    cmake .. -DCMAKE_INSTALL_PREFIX=/usr \
+             -DENABLE_MAN=off \
+             -DENABLE_NLS=off \
+             -DCA_FILE=/etc/ssl/cert.pem
+    make
+    make DESTDIR=$PKG install
+}

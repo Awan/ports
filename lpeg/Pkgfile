@@ -1,0 +1,37 @@
+# Description:A pattern-matching library for Lua
+# URL:http://www.inf.puc-rio.br/~roberto/lpeg/
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on: lua
+
+name=lpeg
+version=1.0.1
+release=1
+source=(http://www.inf.puc-rio.br/~roberto/$name/$name-$version.tar.gz)
+
+build() {
+
+   cp -r $name-$version $name-$version-51
+   cp -r $name-$version $name-$version-52
+
+   cd $name-$version
+   make LUADIR=/usr/include
+
+   cd $SRC/$name-$version-51
+   make LUADIR=/usr/include/lua5.1
+
+   cd $SRC/$name-$version-52
+   make LUADIR=/usr/include/lua5.2
+
+  cd $SRC/$name-$version
+  install -Dm755 $name.so $PKG/usr/lib/lua/5.3/$name.so
+  install -Dm644 re.lua $PKG/usr/share/lua/5.3/re.lua
+
+  cd $SRC/$name-$version-51
+  install -Dm755 $name.so $PKG/usr/lib/lua/5.1/$name.so
+  install -Dm644 re.lua $PKG/usr/share/lua/5.1/re.lua
+
+  cd $SRC/$name-$version-52
+  install -Dm755 $name.so $PKG/usr/lib/lua/5.2/$name.so
+  install -Dm644 re.lua $PKG/usr/share/lua/5.2/re.lua
+
+}

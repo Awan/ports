@@ -1,0 +1,25 @@
+# Description: A fork of i3wm which supports gaps
+# URL: https://github.com/Airblader/i3
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on: yajl xorg-xcb-util-cursor xorg-xcb-util-keysyms xcb-util-xrm startup-notification pango libxkbcommon libev freetype
+
+name=i3-gaps
+version=git
+release=1
+_git=i3
+git=(https://github.com/Airblader/i3)
+
+build() {
+   git clone $git
+   cd $_git
+   autoreconf --force --install
+   rm -rf build
+   mkdir -p build && cd build
+   ../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
+
+   make 
+
+   make DESTDIR=$PKG install
+
+   rm -rf $PKG/usr/share/doc
+}

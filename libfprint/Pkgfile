@@ -1,0 +1,17 @@
+# Description: Library for fingerprint readers
+# URL: https://www.freedesktop.org/wiki/Software/fprint/libfprint
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on: libusb nss pixman glib2
+
+name=libfprint
+version=0.99
+release=1
+source=(https://gitlab.freedesktop.org/$name/$name/-/archive/master/$name-master.tar.bz2)
+
+build() {
+	cd $name-master
+   meson build --prefix=/usr
+	ninja -C build 
+
+	DESTDIR=$PKG PREFIX=/usr meson install -C build
+}

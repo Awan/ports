@@ -1,0 +1,23 @@
+# Description: Allows you to launch shell commands with keyboard and mouse under xorg.
+# URL: https://www.nongnu.org/xbindkeys/
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on:
+
+name=xbindkeys
+version=1.8.6
+release=1
+source=(http://www.nongnu.org/$name/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+   ./configure \
+      --prefix=/usr \
+      --disable-guile \
+      --mandir=/usr/man \
+      --disable-tk
+
+
+   make
+   make DESTDIR=$PKG install
+}

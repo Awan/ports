@@ -1,0 +1,28 @@
+# Description: A fast and secure web browser
+# URL:https://www.opera.com/
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on: gtk3
+
+name=opera
+version=58.0.3135.68
+release=1
+source=(https://get.geo.opera.com/pub/$name/desktop/$version/linux/$name-stable_$version_amd64.deb opera)
+
+
+build() {
+   sed -e "s/%pkgname%/$name/g" -i "$SRC/opera"
+   sed -e "s/%operabin%/$name\/$name/g" \
+      -i "$SRC/opera"
+
+   bsdtar -xf opera-stable_58.0.3135.68_amd64.deb
+   tar -xf data.tar.xz --exclude=usr/share/{lintian,menu} -C "$PKG/"
+   cd $PKG/usr/lib/*-linux-gnu/
+   mv $name ../
+   rm -rf $PKG/usr/lib/*-linux-gnu
+
+   chmod 4755 $PKG/usr/lib/$name/opera_sandbox
+
+   rm $PKG/usr/bin/$name
+   install -Dm755 $SRC/opera $PKG/usr/bin/$name
+}
+

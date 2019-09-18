@@ -1,0 +1,18 @@
+# Description: My fork of Suckless Windows Manager with more layouts
+# URL: https://suckless.dwm.org
+# Maintainer: Abdullah, abdullah at abdullah dot org
+# Depends on: rxvt-unicode 
+
+name=dwm
+version=6.2
+release=1
+source=()
+git=(https://github.com/Awan/suckless.git)
+
+build() {
+    git clone $git $name-$version
+  	 cd $name-$version
+    make
+    make PREFIX=/usr DESTDIR=$PKG install
+    install -Dm755 scripts/paste4dwm $PKG/usr/bin/paste4dwm
+}

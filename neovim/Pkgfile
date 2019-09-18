@@ -1,0 +1,15 @@
+# Description: Fork of Vim aiming to improve user experience.
+# URL: https://neovim.io/
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on: libmpack lua-mpack lua51 lpeg jemalloc libuv luajit unibilium libtermkey libvterm
+
+name=neovim
+version=0.3.4
+release=1
+source=(https://github.com/$name/$name/archive/v0.3.4.tar.gz)
+
+build() {
+	cd $name-$version
+	make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=/usr"
+	make DESTDIR=$PKG install
+}

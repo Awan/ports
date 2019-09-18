@@ -1,0 +1,25 @@
+# Description: Enhanced Virtual Terminal Emulator widget for use with GTK3
+# URL: https://github.com/thestinger/vte-ng
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on: gnutls gtk3 libgmp libpcre2 util-linux gtk-doc
+
+name=vte3-ng
+version=0.54.2.a
+release=1
+source=(https://github.com/thestinger/vte-ng/archive/$version/vte-ng-$version.tar.gz)
+
+build() {
+        cd vte-ng-$version
+        
+        ./autogen.sh \
+                --prefix=/usr \
+                --libexecdir=/usr/lib/vte \
+                --disable-static \
+                --disable-gtk-doc \
+                --disable-vala
+
+        make
+        make DESTDIR=$PKG install
+
+        rm -r $PKG/usr/share/locale
+}

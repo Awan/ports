@@ -1,0 +1,20 @@
+#  ▓▓▓▓▓▓▓▓▓▓
+# ░▓ Author ▓ Abdullah <https://abdullah.today/>
+# ░▓▓▓▓▓▓▓▓▓▓
+# ░░░░░░░░░░  
+# Description:
+# URL:
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on:
+
+name=xdg-open
+version=1.1
+release=1
+source=(https://github.com/Awan/$name/archive/v$version.tar.gz)
+
+build() {
+	cd $name-$version
+   
+   make DESTDIR=$PKG install
+    
+}

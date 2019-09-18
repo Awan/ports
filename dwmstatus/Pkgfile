@@ -1,0 +1,17 @@
+# Description: A minimalistic status bar for dwm
+# URL: https://suckless.org
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on:
+
+name=dwmstatus
+version=1.0
+release=1
+source=()
+git=(/home/ak/.status)
+
+build() {
+   git clone $git
+	cd $git
+   make
+   make  PREFIX=/usr DESTDIR=$PKG install
+}

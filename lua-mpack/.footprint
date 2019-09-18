@@ -1,0 +1,9 @@
+drwxr-xr-x	ak/users	usr/
+drwxr-xr-x	ak/users	usr/lib/
+drwxr-xr-x	ak/users	usr/lib/lua/
+drwxr-xr-x	ak/users	usr/lib/lua/5.1/
+-rwxr-xr-x	ak/users	usr/lib/lua/5.1/mpack.so
+drwxr-xr-x	ak/users	usr/lib/lua/5.2/
+-rwxr-xr-x	ak/users	usr/lib/lua/5.2/mpack.so
+drwxr-xr-x	ak/users	usr/lib/lua/5.3/
+-rwxr-xr-x	ak/users	usr/lib/lua/5.3/mpack.so

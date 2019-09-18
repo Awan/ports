@@ -1,0 +1,17 @@
+drwxr-xr-x	ak/users	usr/
+drwxr-xr-x	ak/users	usr/include/
+-rw-r--r--	ak/users	usr/include/uv.h
+drwxr-xr-x	ak/users	usr/include/uv/
+-rw-r--r--	ak/users	usr/include/uv/errno.h
+-rw-r--r--	ak/users	usr/include/uv/linux.h
+-rw-r--r--	ak/users	usr/include/uv/threadpool.h
+-rw-r--r--	ak/users	usr/include/uv/unix.h
+-rw-r--r--	ak/users	usr/include/uv/version.h
+drwxr-xr-x	ak/users	usr/lib/
+-rw-r--r--	ak/users	usr/lib/libuv.a
+-rwxr-xr-x	ak/users	usr/lib/libuv.la
+lrwxrwxrwx	ak/users	usr/lib/libuv.so -> libuv.so.1.0.0
+lrwxrwxrwx	ak/users	usr/lib/libuv.so.1 -> libuv.so.1.0.0
+-rwxr-xr-x	ak/users	usr/lib/libuv.so.1.0.0
+drwxr-xr-x	ak/users	usr/lib/pkgconfig/
+-rw-r--r--	ak/users	usr/lib/pkgconfig/libuv.pc

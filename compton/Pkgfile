@@ -1,0 +1,17 @@
+# Description: A compositor for X
+# URL: https://github.com/chjj/compton
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on: libconfig libpcre mesa3d xorg-libxcomposite xorg-libxinerama xorg-libxrandr
+
+name=compton
+version=0.1_beta2
+release=1
+source=(https://github.com/chjj/compton/releases/download/v0.1_beta2/compton-git-v0.1_beta2-2013-10-21.tar.xz)
+
+build() {
+	cd $name-git-v0.1_beta2-2013-10-21
+
+   CFG='-DCONFIG_LIBCONFIG' make
+   make DESTDIR=$PKG install
+   mv $PKG/usr/share/man $PKG/usr/man
+}

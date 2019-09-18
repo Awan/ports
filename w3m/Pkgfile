@@ -1,0 +1,29 @@
+# Description: Text-based Web browser as well as pager
+# URL: https://salsa.debian.org/debian/w3m
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on: git imlib2
+
+name=w3m
+version=0.5.3
+release=1
+source=(https://salsa.debian.org/debian/w3m/-/archive/master/w3m-master.tar.bz2)
+
+build() {
+   cd $name-master
+   ./configure \
+		--prefix=/usr \
+		--libexecdir=/usr/lib \
+		--enable-image=x11,fb \
+		--with-imagelib=imlib2 \
+		--with-termlib=ncurses \
+		--disable-w3mmailer \
+      --with-gc \
+      --disable-nls
+
+      make
+
+    make DESTDIR=$PKG install
+
+    rm -r $PKG/usr/share/man/ja*
+
+ }

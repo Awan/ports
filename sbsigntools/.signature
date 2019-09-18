@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/ak.pub
+RWTF6Re4oVuYURjgTMWc5UhnKa7TicVEPVqheq3bic6s2FbiT0VRWkq7d82O+eXV3kroxJE7YAGxerQjmSJNIlBeeG+PZhWcYg8=
+SHA256 (Pkgfile) = 8c32611f1e327160feb0f92ceda4821671a50c0ff28d3fc779b82c06615f77f0
+SHA256 (.footprint) = 6a539ae27d402bf374efe313df6847a8c1852fda87195d454c4715cc8028cb9b
+SHA256 (0001-sbsigntools-fix-autogen.sh-for-build-service.patch) = e1b10c024a44f5175f4cc714b55ca54a2cbddb5f13d3d1f091a2c303e61342ad

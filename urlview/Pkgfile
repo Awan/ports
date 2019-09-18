@@ -1,0 +1,25 @@
+# Description: A curses URL parser for text files
+# URL: http://packages.qa.debian.org/u/urlview.html
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on: bash
+
+name=urlview
+version=0.9
+release=1
+source=(http://ftp.debian.org/debian/pool/main/u/urlview/urlview_0.9.orig.tar.gz)
+
+build() {
+
+  cd $SRC/$name-$version.orig
+  aclocal
+  automake --foreign --ignore-deps --add-missing
+  
+  ./configure --prefix=/usr 
+
+  make 
+
+  install -Dm755 url_handler.sh $PKG/etc/urlview/url_handler.sh
+  install -d $PKG/usr/bin
+  ln -fs /etc/urlview/url_handler.sh $PKG/usr/bin/url_handler.sh
+
+}

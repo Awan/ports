@@ -1,0 +1,36 @@
+# Description: Tools to sign EFI binaries
+# URL:https://build.opensuse.org/package/show/home:jejb1:UEFI/sbsigntools
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on: openssl help2man 
+name=sbsigntools
+version=0.9.2
+release=1
+git=(git://git.kernel.org/pub/scm/linux/kernel/git/jejb/sbsigntools.git)
+source=(0001-$name-fix-autogen.sh-for-build-service.patch)
+
+build() {
+   git clone $git $name-$version
+   patch -d $name-$version -p1 -i $SRC/0001-$name-fix-autogen.sh-for-build-service.patch
+
+   cd $name-$version
+   git submodule init
+   git submodule update
+
+   ./autogen.sh
+
+   ./configure --prefix=/usr \
+      --libexecdir=/usr/lib \
+      --sysconfdir=/etc \
+      --sbindir=/usr/bin \
+      --bindir=/usr/bin
+
+   cp lib/ccan.git/config.h lib/ccan
+
+   make
+
+   make DESTDIR=$PKG install
+
+   rm -rf $PKG/usr/share/man
+   
+
+}

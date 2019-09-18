@@ -1,0 +1,22 @@
+#  ▓▓▓▓▓▓▓▓▓▓
+# ░▓ Author ▓ Abdullah <https://abdullah.today/>
+# ░▓▓▓▓▓▓▓▓▓▓
+# ░░░░░░░░░░  
+# Description:
+# URL:
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on:
+
+name=mupdf
+version=1.14.0
+release=1
+source=(https://mupdf.com/downloads/archive/$name-$version-source.tar.xz)
+
+build() {
+	cd $name-$version-source
+   export USE_SYSTEM_LIBS='no'
+   make XCFLAGS="-fpic"
+   make prefix=$PKG/usr mandir=$PKG/usr/share/man install
+   ln -s mupdf-gl $PKG/usr/bin/mupdf
+   rm -r $PKG/usr/share/doc
+}

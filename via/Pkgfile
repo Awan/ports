@@ -1,0 +1,17 @@
+# Description: More effiecient way to interact with computer
+# URL: https://githbub.com/AKXX/via/
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on:
+
+name=via
+version=1
+release=1
+source=()
+git=(https://github.com/AKXX/via.git)
+
+build() {
+   git clone $git $name
+   cd $name
+   make 
+   install -Dm755 $name $PKG/usr/bin/$name
+}

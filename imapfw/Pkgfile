@@ -1,0 +1,21 @@
+#  ▓▓▓▓▓▓▓▓▓▓
+# ░▓ Author ▓ Abdullah <https://abdullah.today/>
+# ░▓▓▓▓▓▓▓▓▓▓
+# ░░░░░░░░░░  
+# Description: A replacement of offlineimap
+# URL: https://github.com/Offlineimap/imapfw/
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on: python3 pipenv
+
+name=imapfw
+version=0.027
+release=1
+source=(https://github.com/OfflineIMAP/$name/archive/v$version.tar.gz)
+
+build() {
+	cd $name-$version
+    python3 setup.py install
+
+    make DESTDIR=$PKG install
+    
+}

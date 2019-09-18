@@ -1,0 +1,23 @@
+# Description: A keyboard-centric VTE-based terminal, aimed at use within a window manager with tiling and/or tabbing support
+# URL: https://github.com/thestinger/termite/
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on: graphite2 libidn2 vte3-ng xorg-libxcomposite xorg-libxcursor xorg-libxinerama
+
+name=termite
+version=git
+release=1
+source=()
+git=(https://github.com/thestinger/termite.git)
+git_util=(https://github.com/thestinger/util)
+
+build() {
+    git clone $git $name-$version
+    cd $name-$version
+    git clone $git_util
+    make
+    make PREFIX=/usr DESTDIR=$PKG install
+    install -Dm644 config $PKG/usr/etc/xdg/termite/config
+    rm -rf $PKG/usr/share/terminfo
+    install -d $PKG/usr/share/terminfo
+    tic -x termite.terminfo -o $PKG/usr/share/terminfo
+}

@@ -1,0 +1,21 @@
+# Description: S-Lang is a powerful interpreted language
+# URL: http://www.jedsoft.org/slang/
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on: libpng
+
+name=slang
+version=2.3.2
+release=1
+source=(http://www.jedsoft.org/releases/$name/$name-$version.tar.bz2)
+
+build() {
+	cd $name-$version
+
+  ./configure --prefix=/usr
+
+  make -j1
+  make -j1 DESTDIR=$PKG install
+
+  rm -rf $PKG/usr/share/doc/
+  
+}

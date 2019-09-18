@@ -1,0 +1,19 @@
+#  ▓▓▓▓▓▓▓▓▓▓
+# ░▓ Author ▓ Abdullah <https://abdullah.today/>
+# ░▓▓▓▓▓▓▓▓▓▓
+# ░░░░░░░░░░  
+# Description: AnyDesk Free' is an All-In-One Software for Remote Support
+# URL: https://anydesk.org
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on: gtkglext pangox-compat
+
+name=anydesk
+version=4.0.1
+release=1
+source=(https://download.anydesk.com/linux/anydesk_$version-1_amd64.deb)
+
+build() {
+	bsdtar -xf  anydesk_$version-1_amd64.deb
+   bsdtar -xf  data.tar.gz -C $PKG
+   
+}

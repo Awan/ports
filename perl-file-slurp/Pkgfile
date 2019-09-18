@@ -1,0 +1,20 @@
+# Description: Read/Write/Append files quickly
+# URL: https://search.cpan.org/dist/File-Slurp
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on: perl
+
+name=perl-file-slurp
+version=9999.23
+release=1
+source=(https://cpan.metacpan.org/authors/id/C/CA/CAPOEIRAB/File-Slurp-$version.tar.gz)
+
+build() {
+	cd File-Slurp-$version
+   PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+   make
+   make DESTDIR=$PKG install
+   find $PKG -name .packlist -delete
+   find $PKG -name *.pod -delete
+
+   
+}

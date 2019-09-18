@@ -1,0 +1,23 @@
+#  ▓▓▓▓▓▓▓▓▓▓
+# ░▓ Author ▓ Abdullah <https://abdullah.today/>
+# ░▓▓▓▓▓▓▓▓▓▓
+# ░░░░░░░░░░  
+# Description: Screencast tool to show your keys.
+# URL: https://github.com/wavexx/screenkey/
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on:  python-distutils-extra pygtk
+
+name=screenkey
+version=0.9
+_version=0.9
+release=1
+source=(https://gitlab.com/wavexx/$name/-/archive/$name-$_version/$name-$name-$_version.tar.bz2)
+
+build() {
+	cd $name-$name-$_version
+
+   python setup.py build
+
+   python setup.py install --skip-build --optimize=1 --root=$PKG
+
+}

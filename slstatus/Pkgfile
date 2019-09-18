@@ -1,0 +1,17 @@
+# Description: A lightweight status bar for windows managers
+# URL: https://suckless.org/
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on:
+
+name=slstatus
+version=1
+release=1
+source=()
+git=(https://notabug.org/Abdullah/$name.git)
+
+build() {
+   git clone $git $name
+   cd $name
+   make DESTDIR=$PKG install
+}
+

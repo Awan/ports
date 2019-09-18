@@ -1,0 +1,24 @@
+#  ▓▓▓▓▓▓▓▓▓▓
+# ░▓ Author ▓ Abdullah <https://abdullah.today/>
+# ░▓▓▓▓▓▓▓▓▓▓
+# ░░░░░░░░░░  
+# Description: Keyboard-focused browser with a minimal GUI.
+# URL: https://qutebrowser.org/
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on: python3-attrs
+
+name=qutebrowser
+version=1.6.0
+release=1
+source=(https://github.com/$name/$name/archive/v$version.tar.gz
+qb-wrapper)
+
+build() {
+	cd $name-$version
+   python3 setup.py build
+   python3 setup.py install --prefix=/usr --root=$PKG --optimize=1
+   rm -rf build
+   mv $PKG/usr/bin/qutebrowser $PKG/usr/bin/qutebrowser-script
+   cp -p $SRC/qb-wrapper $PKG/usr/bin/qutebrowser
+   chmod 0755 $PKG/usr/bin/qutebrowser
+}

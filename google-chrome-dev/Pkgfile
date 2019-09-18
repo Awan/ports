@@ -1,0 +1,19 @@
+# Description: Google chrome developer edition
+# URL: https://www.google.com/intl/chrome/dev
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on: cups
+
+name=google-chrome-dev
+version=74.0.3702.0
+release=1
+source=(https://dl.google.com/linux/direct/google-chrome-unstable_current_amd64.deb)
+
+build() {
+   bsdtar -xf google-chrome-unstable_current_amd64.deb
+   bsdtar xf data.tar.xz -C $PKG
+
+
+  rm -rf $PKG/etc/cron.daily/ $PKG/opt/google/chrome/cron/
+  rm $PKG/opt/google/chrome-unstable/product_logo_*.png
+   
+}

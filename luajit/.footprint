@@ -1,0 +1,40 @@
+drwxr-xr-x	ak/users	usr/
+drwxr-xr-x	ak/users	usr/bin/
+lrwxrwxrwx	ak/users	usr/bin/luajit -> luajit-2.0.5
+-rwxr-xr-x	ak/users	usr/bin/luajit-2.0.5
+drwxr-xr-x	ak/users	usr/include/
+drwxr-xr-x	ak/users	usr/include/luajit-2.0/
+-rw-r--r--	ak/users	usr/include/luajit-2.0/lauxlib.h
+-rw-r--r--	ak/users	usr/include/luajit-2.0/lua.h
+-rw-r--r--	ak/users	usr/include/luajit-2.0/lua.hpp
+-rw-r--r--	ak/users	usr/include/luajit-2.0/luaconf.h
+-rw-r--r--	ak/users	usr/include/luajit-2.0/luajit.h
+-rw-r--r--	ak/users	usr/include/luajit-2.0/lualib.h
+drwxr-xr-x	ak/users	usr/lib/
+-rw-r--r--	ak/users	usr/lib/libluajit-5.1.a
+lrwxrwxrwx	ak/users	usr/lib/libluajit-5.1.so -> libluajit-5.1.so.2.0.5
+lrwxrwxrwx	ak/users	usr/lib/libluajit-5.1.so.2 -> libluajit-5.1.so.2.0.5
+-rwxr-xr-x	ak/users	usr/lib/libluajit-5.1.so.2.0.5
+drwxr-xr-x	ak/users	usr/lib/lua/
+drwxr-xr-x	ak/users	usr/lib/lua/5.1/
+drwxr-xr-x	ak/users	usr/lib/pkgconfig/
+-rw-r--r--	ak/users	usr/lib/pkgconfig/luajit.pc
+drwxr-xr-x	ak/users	usr/share/
+drwxr-xr-x	ak/users	usr/share/lua/
+drwxr-xr-x	ak/users	usr/share/lua/5.1/
+drwxr-xr-x	ak/users	usr/share/luajit-2.0.5/
+drwxr-xr-x	ak/users	usr/share/luajit-2.0.5/jit/
+-rw-r--r--	ak/users	usr/share/luajit-2.0.5/jit/bc.lua
+-rw-r--r--	ak/users	usr/share/luajit-2.0.5/jit/bcsave.lua
+-rw-r--r--	ak/users	usr/share/luajit-2.0.5/jit/dis_arm.lua
+-rw-r--r--	ak/users	usr/share/luajit-2.0.5/jit/dis_mips.lua
+-rw-r--r--	ak/users	usr/share/luajit-2.0.5/jit/dis_mipsel.lua
+-rw-r--r--	ak/users	usr/share/luajit-2.0.5/jit/dis_ppc.lua
+-rw-r--r--	ak/users	usr/share/luajit-2.0.5/jit/dis_x64.lua
+-rw-r--r--	ak/users	usr/share/luajit-2.0.5/jit/dis_x86.lua
+-rw-r--r--	ak/users	usr/share/luajit-2.0.5/jit/dump.lua
+-rw-r--r--	ak/users	usr/share/luajit-2.0.5/jit/v.lua
+-rw-r--r--	ak/users	usr/share/luajit-2.0.5/jit/vmdef.lua
+drwxr-xr-x	ak/users	usr/share/man/
+drwxr-xr-x	ak/users	usr/share/man/man1/
+-rw-r--r--	ak/users	usr/share/man/man1/luajit.1.gz

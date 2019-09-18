@@ -1,0 +1,45 @@
+# Description: Suckless desktop with dwm + dmenu + slstatus + slock
+# URL: https://suckless.org
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on:
+
+name=suckless
+version=1
+release=1
+source=()
+git=(https://github.com/Awan/$name)
+
+build() {
+	git clone $git $name
+   cd $name
+
+   #dwm
+
+   cd $SRC/$name/dwm
+   make
+   make PREFIX=/usr DESTDIR=$PKG install
+   install -Dm755 scripts/paste4dwm $PKG/usr/bin/paste4dwm
+
+
+   #dmenu
+
+   cd $SRC/$name/dmenu
+   make
+   make PREFIX=/usr DESTDIR=$PKG install
+
+
+   #slstatus
+
+   cd $SRC/$name/slstatus
+   make
+   make PREFIX=/usr DESTDIR=$PKG install
+
+
+   #slock
+
+   cd $SRC/$name/slock
+   make
+   make PREFIX=/usr DESTDIR=$PKG install
+
+
+}

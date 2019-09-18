@@ -1,0 +1,27 @@
+# Description: ANSI text atribute control module.
+# URL: http://search.cpan.org/author/RRA/
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on:
+
+name=p5-term-ansicolor
+version=4.06
+release=1
+source=(http://www.cpan.org/modules/by-module/Term/Term-ANSIColor-$version.tar.gz)
+
+build() {
+	cd Term-ANSIColor-$version
+	perl Makefile.PL
+	make OPTIMIZE="$CFLAGS"
+	make DESTDIR=$PKG install
+	
+	# Remove perlcrap
+	find $PKG -type f \( \
+		-name '.packlist' -o \
+		-name '*.bs' -o \
+		-name 'autosplit.ix' -o \
+		-name 'perllocal.pod' \) -delete
+
+	# Remove empty directories
+	find $PKG -depth -empty -delete
+}
+

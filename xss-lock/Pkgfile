@@ -1,0 +1,23 @@
+# Description: Use external screen lock as screensaver
+# URL: https://bitbucket.org/raymonad/xss-lock
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on: glib2 xcb-util bash-completion cmake git python-docutils
+
+name=xss-lock
+version=0.3.0
+release=1
+source=()
+
+gitsource=https://bitbucket.org/raymonad/xss-lock.git
+
+build() {
+  git clone $gitsource $name
+  cd $name
+
+  cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release
+  make
+  
+  make DESTDIR=$PKG install
+
+}
+

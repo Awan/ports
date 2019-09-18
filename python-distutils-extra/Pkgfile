@@ -1,0 +1,19 @@
+#  ▓▓▓▓▓▓▓▓▓▓
+# ░▓ Author ▓ Abdullah <https://abdullah.today/>
+# ░▓▓▓▓▓▓▓▓▓▓
+# ░░░░░░░░░░  
+# Description: Enhancements to the Python build system
+# URL: https://launchpad.net/python-distutils-extra
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on:
+
+name=python-distutils-extra
+version=2.39
+release=1
+source=(https://launchpad.net/$name/trunk/$version/+download/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+   python setup.py install --root=$PKG
+   python3 setup.py install --root=$PKG
+}

@@ -1,0 +1,9 @@
+drwxr-xr-x	ak/users	usr/
+drwxr-xr-x	ak/users	usr/bin/
+-rwxr-xr-x	ak/users	usr/bin/mpack
+-rwxr-xr-x	ak/users	usr/bin/munpack
+drwxr-xr-x	ak/users	usr/share/
+drwxr-xr-x	ak/users	usr/share/man/
+drwxr-xr-x	ak/users	usr/share/man/man1/
+-rw-r--r--	ak/users	usr/share/man/man1/mpack.1.gz
+-rw-r--r--	ak/users	usr/share/man/man1/munpack.1.gz

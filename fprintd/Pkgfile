@@ -1,0 +1,28 @@
+# Description: D-Bus service to access fingerprint readers
+# URL: https://www.freedesktop.org/wiki/Software/fprint/fprintd
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on: libfprint
+
+name=fprintd
+version=0.8.1
+release=1
+source=(https://gitlab.freedesktop.org/libfprint/$name/-/archive/master/$name-master.tar.bz2)
+
+build() {
+	cd $name-master
+	./autogen.sh
+
+	./configure \
+    --prefix=/usr \
+    --sysconfdir=/etc \
+    --libexecdir=/usr/lib \
+    --localstatedir=/var \
+    --disable-static \
+	 --disable-gtk-doc
+
+
+	make 
+
+	make DESTDIR=$PKG dbus_confdir=/usr/share/dbus-1/system.d install
+  install -d -m 700 $PKG/var/lib/fprint
+}

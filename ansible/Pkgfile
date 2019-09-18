@@ -1,0 +1,23 @@
+# Description:
+# URL: https://www.ansible.com
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on:
+
+name=ansible
+version=2.7.8
+release=1
+source=(https://releases.ansible.com/$name/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+   python3 setup.py build
+   python3 setup.py install -O1 --root=$PKG
+   install -Dm644 COPYING $PKG/usr/share/doc/ansible/COPYING
+
+   install -d $PKG/usr/share/ansible/doc
+   cp -dpr --no-preserve=ownership ./examples $PKG/usr/share/ansible/doc/
+   install -Dm644 examples/ansible.cfg $PKG/etc/ansible/ansible.cfg
+
+   install -d $PKG/usr/share/man/man1
+   cp -dpr --no-preserve=ownership docs/man/man1/*.1 $PKG/usr/share/man/man1
+}

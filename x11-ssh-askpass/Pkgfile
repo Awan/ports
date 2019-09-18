@@ -1,0 +1,22 @@
+# Description: Lightweight passphrase dialog for SSH
+# URL: http://www.jmknoble.net/software/x11-ssh-askpass/
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on: libxt xorg-cf-files
+
+name=x11-ssh-askpass
+version=1.2.4.1
+release=1
+source=(http://pkgs.fedoraproject.org/repo/pkgs/openssh/$name-$version.tar.gz/8f2e41f3f7eaa8543a2440454637f3c3/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+   ./configure \
+      --libexecdir=/usr/lib/ssh \
+      --prefix=/usr \
+      --with-app-defaults-dir=/usr/share/X11/app-defaults \
+
+      xmkmf
+   make includes
+   make
+   make DESTDIR=$PKG install 
+}

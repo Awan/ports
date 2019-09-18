@@ -1,0 +1,14 @@
+# Description: File manager
+# URL: https://github.com/range/
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on:
+
+name=ranger
+version=1
+release=1
+source=(https://github.com/ranger/ranger/archive/master.tar.gz)
+
+build() {
+	cd $name-$version
+   ./setup.py install -O1 --prefix=/usr --root=$PKG
+}

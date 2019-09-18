@@ -1,0 +1,55 @@
+#  ▓▓▓▓▓▓▓▓▓▓
+# ░▓ Author ▓ Abdullah <https://abdullah.today/>
+# ░▓▓▓▓▓▓▓▓▓▓
+# ░░░░░░░░░░  
+# Description: rxvt-unicode is a clone of the well known terminal emulator rxvt, modified to store text in Unicode (either UCS-2 or UCS-4) and to use locale-correct input and output. It also supports mixing multiple fonts at the same time, including Xft fonts.
+# URL: http://software.schmorp.de/
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on:
+
+name=rxvt-unicode
+version=9.22
+release=1
+source=(http://dist.schmorp.de/$name/$name-$version.tar.bz2)
+
+build() {
+  cd $name-$version
+	./configure \
+	--prefix=/usr \
+	--enable-keepscrolling \
+	--enable-selectionscrolling \
+	--enable-pointer-blank \
+	--enable-utmp \
+	--enable-wtmp \
+	--enable-lastlog \
+	--enable-unicode3 \
+	--enable-combining \
+	--enable-xft \
+	--enable-font-styles \
+	--enable-transparency \
+	--enable-fading \
+	--enable-rxvt-scroll \
+	--enable-next-scroll \
+	--enable-xterm-scroll \
+	--enable-perl \
+	--enable-xim \
+	--enable-iso14755 \
+	--with-codesets=all \
+	--enable-frills \
+	--enable-mousewheel \
+	--enable-slipwheeling \
+	--enable-smart-resize \
+	--with-term=rxvt-unicode-256color \
+	--with-name=urxvt \
+	--enable-everything \
+	--enable-256-color 
+
+make 
+
+mkdir -p $PKG/usr/share/terminfo
+
+make TERMINFO=$PKG/usr/share/terminfo DESTDIR=$PKG install
+
+
+
+}

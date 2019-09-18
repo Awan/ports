@@ -1,0 +1,18 @@
+# Description:  The Terminus ttf fonts.
+# URL:          https://files.ax86.net/terminus-ttf/
+# Maintainer:  Abdullah, abdullah at abdullah dot today
+# Depends on:   fontconfig
+
+name=ttf-terminus
+version=4.47.0
+release=1
+source=(https://files.ax86.net/terminus-ttf/files/latest.zip)
+
+build() {
+	cd terminus-ttf-$version
+
+	install -Dm644 TerminusTTF-$version.ttf			$PKG/usr/share/fonts/X11/TTF/Terminus/TerminusTTF-$version.ttf
+	install -Dm644 TerminusTTF-Bold\ Italic-$version.ttf	$PKG/usr/share/fonts/X11/TTF/Terminus/TerminusTTF-Bold\ Italic-$version.ttf
+	install -Dm644 TerminusTTF-Bold-$version.ttf		$PKG/usr/share/fonts/X11/TTF/Terminus/TerminusTTF-Bold-$version.ttf
+	install -Dm644 TerminusTTF-Italic-$version.ttf		$PKG/usr/share/fonts/X11/TTF/Terminus/TerminusTTF-Italic-$version.ttf
+}

@@ -1,0 +1,16 @@
+# Description: A utility to hide X cursor
+# URL: https://github.com/Airblader/unclutter-xfixes
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on: xorg-libxfixes libev asciidoc
+
+name=unclutter
+version=1.5
+release=1
+source=(https://github.com/Airblader/$name-xfixes/archive/v$version.tar.gz)
+
+build() {
+	cd $name-xfixes-$version
+   make 
+   make DESTDIR=$PKG MANDIR=/usr/man install 
+   rm -rf $PKG/usr/{man,share}
+}

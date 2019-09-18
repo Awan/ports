@@ -1,0 +1,20 @@
+# Description: Fast file compressor based on lzo
+# URL: http://www.lzop.org/
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on: lzo
+
+name=lzop
+version=1.04
+release=1
+source=(https://www.lzop.org/download/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+  ./configure \
+    --prefix=/usr \
+
+  make
+  make DESTDIR=$PKG install
+  rm -rf $PKG/usr/share/doc
+}

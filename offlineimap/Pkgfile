@@ -1,0 +1,21 @@
+# Description: Synchronizes emails between two repositories
+
+# URL: http://offlineimap.org/
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on: python-six 
+
+name=offlineimap
+version=7.2.3
+release=1
+source=(https://github.com/$name/$name/archive/v$version.tar.gz)
+
+build() {
+	cd $name-$version
+   find . -type f -exec sed 'ls,^#! \?/usr/bin/\(env \|\)python$,#!/usr/bin/python2,' -i {} \;
+
+   python2 setup.py build
+   python2 setup.py install --root=$PKG --optimize=1
+   install -Dm644 offlineimap.conf $PKG/usr/share/offlineimap/offlineimap.conf
+   install -Dm644 offlineimap.conf.minimal $PKG/usr/share/offlineimap/offlineimap.conf.minimal
+
+}

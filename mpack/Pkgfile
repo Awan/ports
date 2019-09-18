@@ -1,0 +1,17 @@
+# Description: Utilities for encoding and decoding binaries files in MIME format mail messages
+# URL: http://ftp.andrew.cmu.edu/pub/mpack/
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on:
+
+name=mpack
+version=1.6
+release=1
+source=(http://ftp.andrew.cmu.edu/pub/$name/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+   ./configure --prefix=/usr 
+   make
+
+   make DESTDIR=$PKG install
+}

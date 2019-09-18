@@ -1,0 +1,15 @@
+# Description: Notify on new X clipboard events
+# URL: https://github.com/cdown/clipnotify/
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on: xorg-libxfixes
+
+name=clipnotify
+version=1.0.2
+release=1
+source=(https://github.com/cdown/$name/archive/$version.tar.gz)
+
+build() {
+	cd $name-$version
+	make -j1
+	install -Dm755 $name $PKG/usr/bin/$name
+}

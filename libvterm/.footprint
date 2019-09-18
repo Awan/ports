@@ -1,0 +1,17 @@
+drwxr-xr-x	ak/users	usr/
+drwxr-xr-x	ak/users	usr/local/
+drwxr-xr-x	ak/users	usr/local/bin/
+-rwxr-xr-x	ak/users	usr/local/bin/unterm
+-rwxr-xr-x	ak/users	usr/local/bin/vterm-ctrl
+-rwxr-xr-x	ak/users	usr/local/bin/vterm-dump
+drwxr-xr-x	ak/users	usr/local/include/
+-rw-r--r--	ak/users	usr/local/include/vterm.h
+-rw-r--r--	ak/users	usr/local/include/vterm_keycodes.h
+drwxr-xr-x	ak/users	usr/local/lib/
+-rw-r--r--	ak/users	usr/local/lib/libvterm.a
+-rwxr-xr-x	ak/users	usr/local/lib/libvterm.la
+lrwxrwxrwx	ak/users	usr/local/lib/libvterm.so -> libvterm.so.0.0.0
+lrwxrwxrwx	ak/users	usr/local/lib/libvterm.so.0 -> libvterm.so.0.0.0
+-rwxr-xr-x	ak/users	usr/local/lib/libvterm.so.0.0.0
+drwxr-xr-x	ak/users	usr/local/lib/pkgconfig/
+-rw-r--r--	ak/users	usr/local/lib/pkgconfig/vterm.pc

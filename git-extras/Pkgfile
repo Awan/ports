@@ -1,0 +1,12 @@
+# Description: Git Utilites
+# URL: https://github.com/tj/git-extras.git
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on: git
+name=git-extras
+version=5.0.0
+release=1
+source=(https://github.com/tj/$name/archive/$version.tar.gz)
+build() {
+	cd $name-$version
+   make DESTDIR=$PKG PREFIX=/usr SYSCONFDIR=/etc install
+}

@@ -1,0 +1,30 @@
+#  ▓▓▓▓▓▓▓▓▓▓
+# ░▓ Author ▓ Abdullah <https://abdullah.today/>
+# ░▓▓▓▓▓▓▓▓▓▓
+# ░░░░░░░░░░  
+# Description: A collection of routines used to create PNG format graphics files
+# URL: http://www.libpng.org/pub/png/libpng.html
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on:
+
+name=libpng12
+version=1.2.59
+release=1
+source=(https://sourceforge.net/projects/libpng/files/libpng-$version.tar.xz)
+
+
+build() {
+  cd libpng-$version
+  libtoolize --force --copy
+  aclocal
+  autoconf 
+  automake --add-missing
+  ./configure \
+     --prefix=/usr
+  make
+
+  make DESTDIR=$PKG install
+  rm -rf $PKG/usr/{bin,include/*.h,lib/{libpng.{a,so},pkgconfig},share}
+
+
+}

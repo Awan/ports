@@ -1,0 +1,6 @@
+drwxr-xr-x	ak/users	usr/
+drwxr-xr-x	ak/users	usr/bin/
+-rwxr-xr-x	ak/users	usr/bin/keychain
+drwxr-xr-x	ak/users	usr/man/
+drwxr-xr-x	ak/users	usr/man/man1/
+-rw-r--r--	ak/users	usr/man/man1/keychain.1.gz

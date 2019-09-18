@@ -1,0 +1,21 @@
+# Description: Dynamic menu
+# URL: http://tools.suckless.org/dmenu/
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on: xorg-libxinerama xorg-libxft
+
+name=dmenu
+version=4.9
+release=1
+source=()
+git=(https://notabug.org/Abdullah/dmenu.git)
+
+build() {
+	git clone $git $name
+   cd $name
+   make DESTDIR=$PKG \
+      PREFIX=/usr \
+      MANPREFIX=/usr/share/man \
+         install
+   
+   
+}

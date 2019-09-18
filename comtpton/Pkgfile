@@ -1,0 +1,13 @@
+# Description:
+# URL:
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on:
+
+name=comtpton
+version=
+release=1
+source=()
+
+build() {
+	cd $name-$version
+}

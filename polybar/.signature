@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/ak.pub
+RWTF6Re4oVuYUfTfcdPL6z21k0rdIhbWYax6lPOcEYTnHY778cmL/Vo9ktqFGZOgSYa5dgXvMU5rx1F+H1sYTRDGgjYhFWdKdgU=
+SHA256 (Pkgfile) = 4f596681f4cfd14690f4ea4b6abd5e255ea6ccb24640df60d91e2102b37598c9
+SHA256 (.footprint) = 88715e57f8ff57fdb8260b7c6ea6086e83713c349681d1299e82ddfe1bcbf3e9
+SHA256 (polybar-3.3.0.tar) = 647dde8fbf6690138b354bf538d1d97ba8c1743ff22314af4ee085e06a1f506a

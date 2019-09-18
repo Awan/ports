@@ -1,0 +1,17 @@
+# Description: Tools for secure boot
+# URL: http://git.kernel.org/cgit/linux/kernel/git/jejb/efitools.git
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on: openssl perl-file-slurp
+
+name=efitools
+version=1.9.2
+release=1
+source=(https://git.kernel.org/pub/scm/linux/kernel/git/jejb/$name.git/snapshot/$name-1.9.2.tar.gz)
+
+build() {
+	cd $name-$version
+
+   make PREFIX=/usr
+   make DESTDIR=$PKG install
+   rm -rf $PKG/usr/share/man
+}

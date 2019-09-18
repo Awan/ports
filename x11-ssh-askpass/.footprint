@@ -1,0 +1,9 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/lib/ssh/
+lrwxrwxrwx	root/root	usr/lib/ssh/ssh-askpass -> x11-ssh-askpass
+-rwxr-xr-x	root/root	usr/lib/ssh/x11-ssh-askpass
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/X11/
+drwxr-xr-x	root/root	usr/share/X11/app-defaults/
+-r--r--r--	root/root	usr/share/X11/app-defaults/SshAskpass

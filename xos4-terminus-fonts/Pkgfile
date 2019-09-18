@@ -1,0 +1,36 @@
+# Description: Monospace bitmap font (for X11 and console)
+# URL:http://terminus-font.sourceforge.net/
+# Maintainer: Abdullah, abdullah at abdullah dot today
+# Depends on: xorg-bdftopcf xorg-mkfontdir xorg-mkfontscale
+
+name=xos4-terminus-fonts
+version=4.47
+release=1
+source=(https://downloads.sourceforge.net/project/terminus-font/terminus-font-$version/terminus-font-$version.tar.gz fix-75-yes-terminus.patch)
+
+build() {
+
+	cd terminus-font-$version
+    chmod +x configure
+    patch -p1 <$SRC/fix-75-yes-terminus.patch
+	./configure --prefix=/usr \
+		--x11dir=/usr/share/fonts/misc \
+      --psfdir=/usr/share/kbd/consolefonts
+
+	make 
+	make DESTDIR=$PKG install
+	cd $PKG/usr/share/fonts/misc
+	/usr/bin/mkfontdir
+	sed -e 's|.pcf.gz||' fonts.dir|grep terminus > fonts.alias   
+	sed -e 's|.psf.gz||' fonts.dir|grep terminus > fonts.alias   
+    
+   install -Dm644 $SRC/terminus-font-$version/75-yes-terminus.conf \
+      $PKG/etc/fonts/conf.avail/75-yes-terminus.conf 
+   install -d $PKG/etc/fonts/conf.d
+
+   cd $PKG/etc/fonts/conf.d
+   ln -sv ../conf.avail/75-yes-terminus.conf .
+
+
+   
+}

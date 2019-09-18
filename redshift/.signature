@@ -1,0 +1,5 @@
+untrusted comment: verify with /etc/ports/ak.pub
+RWTF6Re4oVuYUQEaqWyeIAJNzMVrncchohWJ+nfwyG3i3ls0/9dnM+Y2yvpYQzd54IDnxORlkxSbWifdeIHaDvaY1uEalNR4hAs=
+SHA256 (Pkgfile) = ff01f90f078d2da5d15383401b31fed85c8029fb3a6225e1b06e8bc6de3dd17b
+SHA256 (.footprint) = 1fc1a9e2c33b1affee379470d562721ef010f0bdc7fbfaa35b4c897d81451ba7
+SHA256 (redshift-1.12.tar.gz) = 5111145773f1ade10c5967c531f8c1938b42171399bf48126db10162a04b4a48
